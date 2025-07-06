@@ -17,19 +17,27 @@ class RegisteredUserController extends Controller
 {
     /**
      * Show the registration page.
+     * @note Registration functionality has been disabled
      */
     public function create(): Response
     {
-        return Inertia::render('auth/register');
+        // Registration is disabled
+        return redirect()->route('login');
+        // return Inertia::render('auth/register');
     }
 
     /**
      * Handle an incoming registration request.
+     * @note Registration functionality has been disabled
      *
      * @throws \Illuminate\Validation\ValidationException
      */
     public function store(Request $request): RedirectResponse
     {
+        // Registration is disabled
+        return redirect()->route('login');
+        
+        /* Original registration code - disabled
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|lowercase|email|max:255|unique:'.User::class,
@@ -47,5 +55,6 @@ class RegisteredUserController extends Controller
         Auth::login($user);
 
         return redirect()->intended(route('dashboard', absolute: false));
+        */
     }
 }
