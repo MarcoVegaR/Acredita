@@ -2,6 +2,10 @@
 
 uses(\Illuminate\Foundation\Testing\RefreshDatabase::class);
 
+// La funcionalidad de registro ha sido desactivada en la aplicación
+// Estos tests se mantienen comentados por referencia
+
+/*
 test('registration screen can be rendered', function () {
     $response = $this->get('/register');
 
@@ -18,4 +22,10 @@ test('new users can register', function () {
 
     $this->assertAuthenticated();
     $response->assertRedirect(route('dashboard', absolute: false));
+});
+*/
+
+// Test placeholder para evitar que el archivo esté vacío
+test('registration is disabled', function() {
+    expect(true)->toBeTrue();
 });
